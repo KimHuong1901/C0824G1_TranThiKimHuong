@@ -207,8 +207,35 @@ values
 (1204, 1004, 1104, 1),
 (1205, 1005, 1105, 4);
 select * from nhan_vien where name_nhan_vien regexp '^[HKT]'and char_length(name_nhan_vien) <=15;
-select * from khach_hang where ((datediff( current_date(), ngay_sinh))/365) between 15 and 50;
-select * from khach_hang where id in ( select id_khach_hang from hop_dong
-																		where id_khach_hang in ( select id from khach_hang
-																														where id_loai_khach_hang in ( select id from loai_khach
-																																					where id = 'Diamond')));
+select * from khach_hang where (((datediff( current_date(), ngay_sinh))/365) between 15 and 50) and dia_chi = 'Da Nang' or 'Quang Tri';
+
+select khach_hang.ho_va_ten, count(hop_dong.id) as so_lan_dat_phong
+from khach_hang
+join loai_khach on khach_hang.id_loai_khach_hang = loai_khach.id
+join hop_dong on khach_hang.id = hop_dong.id_khach_hang
+where loai_khach.name_loai_khach = 'Diamond'
+group by khach_hang.id
+order by so_lan_dat_phong ASC;
+select
+    khach_hang.id as id_khach_hang,
+    khach_hang.ho_va_ten as ho_ten,
+    loai_khach.name_loai_khach as ten_loai_khach,
+    hop_dong.id as id_hop_dong,
+    dich_vu_di_kem.name_dich_vu as ten_dich_vu,
+    hop_dong.ngay_lam_hop_dong as ngay_lam_hop_dong,
+    hop_dong.ngay_ket_thuc as ngay_ket_thuc,
+    (dich_vu.chi_phi_thue + hop_dong_chi_tiet.so_luong * dich_vu_di_kem.gia) as tong_tien
+from 
+    khach_hang
+left join 
+    hop_dong on khach_hang.id = hop_dong.id_khach_hang
+left join
+    hop_dong_chi_tiet on hop_dong.id = hop_dong_chi_tiet.id_hop_dong
+left join 
+    dich_vu_di_kem on hop_dong_chi_tiet.id_dich_vu_di_kem = dich_vu_di_kem.id
+left join 
+    dich_vu on hop_dong.id_dich_vu = dich_vu.id
+left join
+    loai_khach on khach_hang.id_loai_khach_hang = loai_khach.id
+order by 
+    khach_hang.id;
