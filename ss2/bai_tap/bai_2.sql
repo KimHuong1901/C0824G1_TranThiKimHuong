@@ -7,13 +7,13 @@ age int
 create table products(
 id int primary key,
 name_product varchar(50),
-price int
+price double
 );
 create table orders(
 id int primary key,
 id_customer int,
-date_order date,
-total_price int,
+date_order datetime,
+total_price double,
 foreign key (id_customer) references customers(id)
 );
 create table orderdetails (
