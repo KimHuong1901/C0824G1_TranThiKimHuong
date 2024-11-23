@@ -132,6 +132,7 @@ insert into nhan_vien
 (id, name_nhan_vien, id_vi_tri, id_trinh_do, id_bo_phan, ngay_sinh, cmnd_nhan_vien, luong, sdt, email, dia_chi)
 values 
 (407, 'Hoang Thi HHHHHHHHHHHHHHH', 307, 106, 207, '1994-06-01', '4452424', 25000, 34234424, 'HH@gmail.com', 'Hai Phong');
+
 insert into loai_khach (id, name_loai_khach) 
 values 
 (501, 'Cá nhân'),
@@ -190,6 +191,24 @@ insert into hop_dong
 values 
 (1006, 406, 607, 901, '2024-01-01', '2024-01-10', 1000, 5000),
 (1007, 407, 608, 902, '2024-01-01', '2024-01-10', 1000, 5000);
+
+insert into hop_dong 
+(id, id_nhan_vien, id_khach_hang, id_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, tong_tien)
+values 
+(1012, 401, 601, 901, '2019-09-01', '2019-09-10', 1000, 5000), 
+(1013, 402, 602, 902, '2019-10-01', '2019-10-20', 1500, 8000),
+(1010, 403, 603, 903, '2019-11-01', '2019-11-15', 2000, 10000),
+(1011, 404, 604, 901, '2019-12-01', '2019-12-10', 2500, 12000);
+
+insert into hop_dong 
+(id, id_nhan_vien, id_khach_hang, id_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, tong_tien)
+values 
+(1014, 401, 601, 901, '2019-09-01', '2019-09-10', 1000, 5000), 
+(1015, 402, 602, 902, '2019-10-01', '2019-10-20', 1500, 8000), 
+(1010, 403, 603, 903, '2019-11-01', '2019-11-15', 2000, 10000),
+(1011, 404, 604, 901, '2019-12-01', '2019-12-10', 2500, 12000), 
+(1012, 405, 605, 901, '2020-01-01', '2020-01-10', 1500, 7000),
+(1013, 406, 606, 902, '2020-02-01', '2020-02-10', 2000, 8000);
 insert into dich_vu_di_kem 
 (id, name_dich_vu, gia, don_vi, trang_thai_kha_dung)
 values 
@@ -198,6 +217,7 @@ values
 (1103, 'Hồ bơi', 1500, 1, 'Đã thuê'),
 (1104, 'Nhà vệ sinh', 300, 1, 'Còn trống'),
 (1105, 'Wifi', 200, 1, 'Còn trống');
+
 insert into hop_dong_chi_tiet 
 (id, id_hop_dong, id_dich_vu_di_kem, so_luong)
 values 
@@ -206,6 +226,24 @@ values
 (1203, 1003, 1103, 3),
 (1204, 1004, 1104, 1),
 (1205, 1005, 1105, 4);
+insert into hop_dong_chi_tiet 
+(id, id_hop_dong, id_dich_vu_di_kem, so_luong)
+values 
+(1208, 1014, 1101, 2),
+(1209, 1015, 1103, 3), 
+(1210, 1010, 1104, 1), 
+(1211, 1011, 1105, 4), 
+(1212, 1012, 1101, 1),
+(1213, 1013, 1103, 1);
+update hop_dong_chi_tiet 
+set so_luong = 1 
+where id = 1208;
+update hop_dong_chi_tiet 
+set so_luong = 1 
+where id = 1209;
+update hop_dong_chi_tiet 
+set so_luong = 1 
+where id IN (1210, 1211, 1212, 1213);
 select * from nhan_vien where name_nhan_vien regexp '^[HKT]'and char_length(name_nhan_vien) <=15;
 select * from khach_hang where (((datediff( current_date(), ngay_sinh))/365) between 15 and 50) and dia_chi = 'Da Nang' or 'Quang Tri';
 
@@ -239,3 +277,203 @@ left join
     loai_khach on khach_hang.id_loai_khach_hang = loai_khach.id
 order by 
     khach_hang.id;
+
+select dv.id, 
+dv.name_dich_vu, 
+dv.dien_tich, 
+dv.chi_phi_thue, 
+ldv.name_loai_dich_vu
+from 
+dich_vu dv
+join loai_dich_vu ldv on dv.id_loai_dich_vu = ldv.id
+join hop_dong hd on dv.id = hd.id_dich_vu;
+select 
+    dv.id as id_dich_vu,
+    dv.name_dich_vu as name_dich_vu,
+    dv.dien_tich as dien_tich,
+    dv.chi_phi_thue as chi_phi_thue,
+    ldv.name_loai_dich_vu as ten_loai_dich_vu
+from 
+    dich_vu dv
+join 
+    loai_dich_vu ldv on dv.id_loai_dich_vu = ldv.id
+where 
+    dv.id not in (
+        select id_dich_vu
+        from hop_dong
+        where ngay_lam_hop_dong between '2019-01-01' and '2019-03-31'
+    );
+    
+    select 
+    dv.id as id_dich_vu,
+    dv.name_dich_vu as ten_dich_vu,
+    dv.dien_tich as dien_tich,
+    dv.so_nguoi_toi_da as so_nguoi_toi_da,
+    dv.chi_phi_thue as chi_phi_thue,
+    ldv.name_loai_dich_vu as ten_loai_dich_vu
+from 
+    dich_vu dv
+join 
+    loai_dich_vu ldv on dv.id_loai_dich_vu = ldv.id
+where 
+    dv.id in (
+        select id_dich_vu
+        from hop_dong
+        where year(ngay_lam_hop_dong) = 2018
+    )
+and 
+    dv.id not in (
+        select id_dich_vu
+        from hop_dong
+        where year(ngay_lam_hop_dong) = 2019
+    );
+    
+select distinct ho_va_ten as HoTenKhachHang 
+from khach_hang;
+
+select ho_va_ten as HoTenKhachHang 
+from khach_hang
+group by ho_va_ten;
+
+select kh.ho_va_ten as HoTenKhachHang
+from khach_hang kh
+where not exists (
+    select 1 
+    from khach_hang kh2 
+    where kh2.ho_va_ten = kh.ho_va_ten 
+    and kh2.id > kh.id
+);
+
+select 
+    month(ngay_lam_hop_dong) as thang,
+    sum(tong_tien) as tong_doanh_thu
+from 
+    hop_dong
+where 
+    year(ngay_lam_hop_dong) = 2019
+group by 
+    month(ngay_lam_hop_dong)
+order by  
+    thang;
+    
+select 
+    hd.id as id_hop_dong,
+    hd.ngay_lam_hop_dong as ngay_lam_hop_dong,
+    hd.ngay_ket_thuc as ngay_ket_thuc,
+    hd.tien_dat_coc as tien_dat_coc,
+    count(hdct.id) as so_luong_dich_vu_di_kem
+from 
+    hop_dong hd
+left join
+    hop_dong_chi_tiet hdct on hd.id = hdct.id_hop_dong
+group by 
+    hd.id;
+    
+select
+    dvdk.id as id_dich_vu_di_kem,
+    dvdk.name_dich_vu as ten_dich_vu_di_kem,
+    dvdk.gia as gia,
+    dvdk.don_vi as don_vi
+from 
+    dich_vu_di_kem dvdk
+join 
+    hop_dong_chi_tiet hdct on dvdk.id = hdct.id_dich_vu_di_kem
+join 
+    hop_dong hd on hd.id = hdct.id_hop_dong
+join 
+    khach_hang kh on hd.id_khach_hang = kh.id
+join 
+    loai_khach lk on kh.id_loai_khach_hang = lk.id
+where 
+    lk.name_loai_khach = 'Diamond'
+    and (kh.dia_chi = 'Vinh' or kh.dia_chi = 'Quang Ngai');
+    
+    select 
+    hd.id as id_hop_dong,
+    nv.name_nhan_vien as ten_nhan_vien,
+    kh.ho_va_ten as ten_khach_hang,
+    kh.sdt as sdt_khach_hang,
+    dv.name_dich_vu as ten_dich_vu,
+    sum(hdct.so_luong) as so_luong_dich_vu_di_kem,
+    hd.tien_dat_coc as tien_dat_coc
+from 
+    hop_dong hd
+join 
+    nhan_vien nv on hd.id_nhan_vien = nv.id
+join 
+    khach_hang kh on hd.id_khach_hang = kh.id
+join 
+    dich_vu dv on hd.id_dich_vu = dv.id
+join 
+    hop_dong_chi_tiet hdct on hd.id = hdct.id_hop_dong
+where 
+    hd.ngay_lam_hop_dong between '2019-10-01' and '2019-12-31'
+    and hd.id not in (
+        select id 
+        from hop_dong 
+        where ngay_lam_hop_dong between '2019-01-01' and '2019-06-30'
+    )
+group by 
+    hd.id;
+    
+select
+    dvdk.id as IDDichVuDiKem,
+    dvdk.name_dich_vu as TenDichVuDiKem,
+    COUNT(hdct.id) as SoLanSuDung
+from 
+    dich_vu_di_kem dvdk
+join 
+    hop_dong_chi_tiet hdct on dvdk.id = hdct.id_dich_vu_di_kem
+group by
+    dvdk.id
+having 
+    count(hdct.id) = (
+        select max(SoLan) 
+        from (
+            select count(id) as SoLan 
+            from hop_dong_chi_tiet 
+            group by id_dich_vu_di_kem
+        ) as so_lan_dung_dich_vu_nhieu_nhat
+    );	
+    
+select
+    hd.id as id_hop_dong,
+    ldv.name_loai_dich_vu as ten_loai_dich_vu,
+    dvdk.name_dich_vu as ten_dich_vu_di_kem,
+    count(hdct.id) as so_lan_su_dung
+from 
+    hop_dong hd
+join 
+    hop_dong_chi_tiet hdct on hd.id = hdct.id_hop_dong
+join 
+    dich_vu_di_kem dvdk on hdct.id_dich_vu_di_kem = dvdk.id
+join 
+    loai_dich_vu ldv on dvdk.id = ldv.id
+group by 
+	hd.id, 
+    ldv.name_loai_dich_vu, 
+    dvdk.name_dich_vu
+having 
+    so_lan_su_dung = 1;
+
+
+select 
+    nv.id as id_nhan_vien, 
+    nv.name_nhan_vien as ho_ten, 
+    td.name_trinh_do as trinh_do, 
+    bp.name_bo_phan as ten_bo_phan, 
+    nv.sdt as so_dien_thoai, 
+    nv.dia_chi as dia_chi,
+    count(hd.id) as so_luong_hop_dong
+from 
+    nhan_vien nv
+left join  
+    hop_dong hd on nv.id = hd.id_nhan_vien and hd.ngay_lam_hop_dong between '2018-01-01' and '2019-12-31'
+join 
+    trinh_do td on nv.id_trinh_do = td.id
+join 
+    bo_phan bp on nv.id_bo_phan = bp.id
+group by
+    nv.id, td.name_trinh_do, bp.name_bo_phan
+having 
+    count(hd.id) <= 3;
