@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phim Hoạt Hình</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ccc;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            height: 60px;
+            padding: 20px 0px 10px 20px;
+            font-weight: bold;
+            color: black;
+            font-style: italic;
+            font-family: "Arial Rounded MT Bold";
+
+        }
+        span{
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 15px;
+            background-color: bisque;
+        }
+        header nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            text-align: center;
+        }
+        nav{
+            padding-left: 400px;
+        }
+        .main-content {
+            display: flex;
+            margin-top: 20px;
+        }
+        .sidebar {
+            width: 30%;
+            margin-right: 20px;
+        }
+        .sidebar .video {
+            display: flex;
+            margin-bottom: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+        .sidebar .video .info {
+            padding: 10px;
+            font-size: 14px;
+        }
+        .sidebar .video .info .title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .main-video {
+            width: 70%;
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .main-video iframe {
+            width: 100%;
+            height: 315px;
+            margin-bottom: 10px;
+        }
+        strong{
+            font-style: italic;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+<div class="logo"> <span>Phim Hoạt Hình</span></div>
+<div class="container">
+    <header>
+        <nav>
+            <a href="#">Phim hoạt hình</a> |
+            <a href="#">Phim yêu thích</a> |
+            <a href="#">Nhân vật</a> |
+            <a href="#">Góp ý</a>
+        </nav>
+    </header>
+    <div class="main-content">
+        <div class="sidebar">
+            <div class="video">
+                <iframe width="200" height="100px" src="https://www.youtube.com/embed/7ei02yDAgOQ?si=V4YcCNO8mF97Cz4B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        <div class="info">
+                <div class="title">PAW PATROL NHỮNG CHÚ CHÓ CỨU HỘ Phần 2 </div>
+                <div> 4,2 Tr lượt xem</div>
+                <div><strong>Nick VN</strong></div>
+            </div>
+            </div>
+            <div class="video">
+                <iframe width="200" height="100px" src="https://www.youtube.com/embed/cqM_HFH3ueg?si=KGCyPyBqEPrgg68m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="info">
+                    <div class="title">Larva Tuba</div>
+                    <div>74 Tr lượt xem</div>
+                    <div><strong>SMToon Việt Nam</strong></div>
+                </div>
+            </div>
+            <div class="video">
+                <iframe width="200" height="100px" src="https://www.youtube.com/embed/2uyA_WPGlyU?si=8rD8jtiVEQd-nGfw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="info">
+                    <div class="title">Oscar Çöllerde</div>
+                    <div>22 Tr lượt xem</div>
+                    <div><strong>Minika</strong></div>
+                </div>
+            </div>
+            <div class="video">
+                <iframe width="200" height="100px" src="https://www.youtube.com/embed/_KYqjiqy9JI?si=W1YvPciyVeVW8hJa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="info">
+                    <div class="title">Oggy và những chú gián tinh nghịch</div>
+                    <div>27 Tr lượt xem</div>
+                    <div><strong>Oggy và những chú gián tinh nghịch</strong></div>
+                </div>
+            </div>
+        </div>
+        <div class="main-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/fNkxm8zz7wc?si=8M7AgSuFaroSX4tP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div>
+                <h2>LARVA VÀNG VÀ ĐỎ - ẤU TRÙNG TINH NGHỊCH </h2>
+                <p>7,1 Tr lượt xem</p>
+                <p><strong>Larva Cartoon Việt Nam</strong></p>
+                <p>"Larva Cartoon" - Tuba's Official Larva Animation.
+
+                    Larva - series of short cartoon animation episodes about the lives of larva YELLOW - RED
+                    LARVA YELLOW – larva with a large appearance but stupid, naive
+                    LARVA RED - petite appearance but smart, sly, many bullying tricks LARVA YELLOW
+                    Larva lives everywhere with her other larval friends. The life of larva creates funny, funny, humane stories. A new perspective on the world of tiny larva for viewers. Larva – Best episodes cartoon collection for kids. Larva is like funny cartoon series for kids such as: Tom and Jerry, Masha and The Bear, Zig & Sharko, Doraemon, Teen Titans Go, Om Nom Stories… Or funny 3D cartoons: Luca , Paw patrol, Oddbods, Dinocore…
+                    Subscribe to the Larva Cartoon channel to make sure you don't miss a funny episode.
+                    Thanks for watching!</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        © 2017 - Thiết kế web bởi trang hoathinhvn.net
+    </footer>
+</div>
+</body>
+</html>
