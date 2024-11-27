@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microsoft Surface</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .navbar {
+      background-color: #f2f2f2;
+      padding: 10px 20px;
+    }
+
+    .navbar-brand img {
+      height: 30px;
+    }
+
+    .nav-link {
+      color: black;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+
+    .shop-deals-btn {
+      background-color: #0078d4;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      padding: 6px 15px;
+    }
+
+    .shop-deals-btn:hover {
+      background-color: #005a9e;
+    }
+
+    .announcement-bar {
+      background-color: #9b4dca;
+      color: white;
+      font-size: 16px;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .announcement-bar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .announcement-bar a:hover {
+      text-decoration: underline;
+    }
+
+    .animation {
+    display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: auto; margin-right: 20px;
+    height: 30px;
+    }
+
+    .animation-label {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .animation-switch {
+      display: inline-block;
+      position: relative;
+      width: 34px;
+      height: 18px;
+    }
+
+    .animation-switch input {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #0078d4;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(16px);
+    }
+
+    #copilot {
+      text-align: center;
+      font-size: 30px;
+      padding-top: 30px;
+    }
+
+    .gradient-text {
+      text-align: center;
+      font-size: 50px;
+      font-weight: bold;
+      background: linear-gradient(300deg, black, lightskyblue);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-main {
+      font-size: 20px;
+      text-align: center;
+      padding-left: 200px;
+      padding-right: 200px;
+    }
+
+    .surface {
+      height: 40px;
+      border-radius: 5px;
+      background-color: blue;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<!-- SỬA THANH ĐIỀU HƯỚNG: -->
+<nav class="navbar **navbar-expand-lg** navbar-light bg-light">
+  <a class="navbar-brand" href="https://www.microsoft.com/vi-vn/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo">
+    <strong> Microsoft |</strong>
+  </a>
+  **<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">**
+  <span class="navbar-toggler-icon"></span>
+  **</button>**
+  **<div class="collapse navbar-collapse" id="navbarNav">**
+  <ul class="navbar-nav">
+    <li class="nav-item"><a class="nav-link" href="#">Computers</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Computers for Business</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Accessories</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Shop now</a></li>
+    <li class="nav-item"><a class="nav-link" href="https://support.microsoft.com/vi-vn/surface">Support</a></li>
+  </ul>
+</div>
+  <button class="shop-deals-btn">SHOP DEALS</button>
+</nav>
+
+<div class="animation">
+  <label class="animation-label">Animation</label>
+  <label class="animation-switch">
+    <input type="checkbox" checked>
+    <span class="slider"></span>
+  </label>
+</div>
+<div class="announcement-bar">
+  Make their holiday shine with Surface laptops and 2-in-1s.
+  <a href="https://www.microsoft.com/en-us/store/b/surface-deals">Shop Surface deals</a>
+</div>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12">
+      <p id="copilot">Copilot+PC</p>
+      <p class="gradient-text">A new AI era begins</p>
+      <p class="text-main">Introducing the ultimate Copilot+ PCs from Microsoft Surface, powered by Snapdragon<sup>®</sup> X Elite and Plus processors <sup><a href="#note1">1</a></sup></p>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-6 col-md-4 text-center">
+      <button class="surface">
+        <a href="https://www.microsoft.com/en-us/surface/devices/surface-pro-11th-edition" style="color: white; text-decoration: none;">
+          <strong>Meet the new Surface Pro</strong>
+        </a>
+      </button>
+    </div>
+    <div class="col-6 col-md-4 text-center">
+      <button class="surface">
+        <a href="https://www.microsoft.com/en-us/surface/devices/surface-laptop-7th-edition" style="color: white; text-decoration: none;">
+          <strong>Meet the new Surface Laptop</strong>
+        </a>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="note1" class="container mt-3">
+  <p>[1] Prerelease product shown, subject to change.</p>
+  <p>Copilot for Microsoft 365 sold separately.</p>
+  <p>Keyboard sold separately. Use Copilot key with supported Windows 11 devices; feature availability varies by device and market, see
+    <a href="https://support.microsoft.com/vi-vn/windows/ph%C3%ADm-t%E1%BA%AFt-trong-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec#WindowsVersion=Windows_11">
+      aka.ms/KeySupport
+    </a>.
+  </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
