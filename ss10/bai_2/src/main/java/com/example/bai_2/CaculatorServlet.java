@@ -15,16 +15,15 @@ public class CaculatorServlet extends HttpServlet {
         float firstNum = Float.parseFloat(req.getParameter("first-num"));
         float secondNum = Float.parseFloat(req.getParameter("second-num"));
         String operator = req.getParameter("operator");
-        PrintWriter writer = resp.getWriter();
-        writer.println("<html>");
-        writer.println("<h2> Result: </h2>");
+        String resultMessage;
         try{
             float result = Caculator.caculate(firstNum, secondNum, operator);
-            writer.println(firstNum + " + " + secondNum + " = " + result );
+            resultMessage = firstNum + " + " + secondNum + " = " + result ;
         }catch(Exception e){
-            writer.println(e.getMessage());
+            resultMessage = "Error" + e.getMessage();
         }
-        writer.println("</html>");
+        req.setAttribute("resultMessage", resultMessage);
+        req.getRequestDispatcher("WEB-INF/result.jsp").forward(req,resp);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

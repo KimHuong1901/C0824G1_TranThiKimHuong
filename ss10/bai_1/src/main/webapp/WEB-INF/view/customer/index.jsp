@@ -14,6 +14,7 @@
       margin: auto;
       border-collapse: collapse;
       width: 50%;
+      color: ;
     }
   </style>
 </head>

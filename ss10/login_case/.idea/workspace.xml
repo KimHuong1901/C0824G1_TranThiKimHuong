@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6678587-68a7-4480-9b59-40ae7cc3e3d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../case_study/ex_case/.idea/ex_case.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ex_case/.idea/ex_case.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/customer/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/customer/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bai_2/src/main/java/com/example/bai_2/CaculatorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_2/src/main/java/com/example/bai_2/CaculatorServlet.java" afterDir="false" />
+    <list default="true" id="dd227eb9-874c-4c15-8c20-173f25e6785c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../bai_1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_1/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,20 +22,17 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="login_case" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
       </state>
     </system>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="Interface" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -52,23 +45,21 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
+  &quot;associatedIndex&quot;: 0
 }</component>
-  <component name="ProjectId" id="2pWEGj25XR4Cyl8daJxw1Mrao0m" />
+  <component name="ProjectId" id="2pbeJnSetYTTL445buOi4LxjUs4" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Gradle.Build bai_1.executor": "Run",
-    "Gradle.Build demo1.executor": "Run",
+    "Gradle.Build login_case.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Tomcat Server.Tomcat 9.0.97.executor": "Debug",
+    "Tomcat Server.Tomcat 9.0.97.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/JAVA FULL STACK/Module3/ss10/bai_1",
+    "last_opened_file_path": "D:/JAVA FULL STACK/Module3/case_study/login_case",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -77,26 +68,18 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\JAVA FULL STACK\Module3\ss10\demo1\src\main\webapp\WEB-INF\view\customer" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.demo1.controller" />
-    </key>
-  </component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.97" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.97" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="UPDATING_POLICY" value="restart-server" />
+    <configuration name="Tomcat 9.0.97" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.97" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="hot-swap-classes" />
       <deployment>
-        <artifact name="Gradle : com.example : demo1-1.0-SNAPSHOT.war">
+        <artifact name="Gradle : com.example : login_case-1.0-SNAPSHOT.war">
           <settings>
             <option name="CONTEXT_PATH" value="" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="844f3aff-122c-409f-b267-92c9fa90edaf" />
+        <option name="BASE_DIRECTORY_NAME" value="bc3a85a7-d357-4b5b-97ff-ccb8b657a3e2" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -104,7 +87,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="62116" />
+        <option name="DEBUG_PORT" value="51917" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -169,7 +152,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Gradle : com.example : demo1-1.0-SNAPSHOT.war" />
+          <artifact name="Gradle : com.example : login_case-1.0-SNAPSHOT.war" />
         </option>
       </method>
     </configuration>
@@ -185,36 +168,18 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f6678587-68a7-4480-9b59-40ae7cc3e3d8" name="Changes" comment="" />
-      <created>1732873337422</created>
+      <changelist id="dd227eb9-874c-4c15-8c20-173f25e6785c" name="Changes" comment="" />
+      <created>1733039133852</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1732873337422</updated>
-      <workItem from="1732873338435" duration="2171000" />
-      <workItem from="1732950527471" duration="1451000" />
-      <workItem from="1732956393158" duration="2745000" />
-      <workItem from="1732969307099" duration="634000" />
-      <workItem from="1733103772776" duration="6090000" />
+      <updated>1733039133852</updated>
+      <workItem from="1733039135026" duration="105000" />
+      <workItem from="1733039273981" duration="31000" />
+      <workItem from="1733039319595" duration="894000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/customer/index.jsp</url>
-          <line>23</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo1/controller/CustomerController.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
