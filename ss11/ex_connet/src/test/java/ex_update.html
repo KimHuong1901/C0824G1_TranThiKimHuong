@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+
+    <!-- MDB CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet">
+    <style>
+        /* Ghi đè border cho tất cả các input */
+        .form-control {
+            border: 1px solid black !important;
+            border-radius: 4px !important;
+            padding: 10px !important;
+            box-shadow: none !important;
+        }
+
+        /* Đảm bảo textarea cũng có border */
+        .form-control:focus, .form-control {
+            border: 1px solid black !important; /* Border màu xanh khi focus */
+            outline: none;                        /* Tắt viền outline */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container my-5">
+<form>
+        <div class="row mb-4">
+            <div class="col">
+                <div data-mdb-input-init class="form-outline">
+                    <input class="form-control" type="text" placeholder="Disabled input"
+                           aria-label="Disabled input example" disabled value ="Id">
+                </div>
+            </div>
+            <div class="col">
+                <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="form6Example2" class="form-control" />
+                    <label class="form-label" for="form6Example2">Last name</label>
+                </div>
+            </div>
+        </div>
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="form6Example3" class="form-control" />
+            <label class="form-label" for="form6Example3">Company name</label>
+        </div>
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="form6Example4" class="form-control" />
+            <label class="form-label" for="form6Example4">Address</label>
+        </div>
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="email" id="form6Example5" class="form-control" />
+            <label class="form-label" for="form6Example5">Email</label>
+        </div>
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="number" id="form6Example6" class="form-control" />
+            <label class="form-label" for="form6Example6">Phone</label>
+        </div>
+        <div data-mdb-input-init class="form-outline mb-4">
+            <textarea class="form-control" id="form6Example7" rows="4"></textarea>
+            <label class="form-label" for="form6Example7">Additional information</label>
+        </div>
+    <button data-mdb-ripple-init type="button" class="btn btn-primary btn-custom-width mb-4">Update</button>
+
+</form>
+</div>
+
+</body>
+</html>
