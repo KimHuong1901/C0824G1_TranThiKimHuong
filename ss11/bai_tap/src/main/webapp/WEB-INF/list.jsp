@@ -94,7 +94,6 @@
             <th>Description</th>
             <th>Supplier</th>
             <th>Action</th>
-            <th></th>
         </tr>
         </thead>
         <tbody>
