@@ -17,8 +17,9 @@ public class ProductRepository {
 //        products.add(new Product(8, "RET", 50000, "Normal", "Unilever"));
 //        products.add(new Product(4, "AHA", 52000, "Vip", "ET"));
 //    }
-List<Product> products = new ArrayList<Product>();
+
     public List<Product> getProducts() {
+        List<Product> products = new ArrayList<Product>();
         try {
             PreparedStatement statement = BaseRepository.getConnection().prepareStatement("select*from products");
             ResultSet resultSet = statement.executeQuery();
@@ -70,7 +71,9 @@ List<Product> products = new ArrayList<Product>();
         }
     }
     public List<Product> sortProductByName(){
+        List<Product> products = new ArrayList<Product>();
         try{
+
             PreparedStatement statement = BaseRepository.getConnection().prepareStatement("select * from products order by name_product");
             ResultSet result = statement.executeQuery();
             while (result.next()) {
@@ -87,6 +90,7 @@ List<Product> products = new ArrayList<Product>();
         return products;
     }
     public List<Product> findBySupplier(String supplier) {
+        List<Product> products = new ArrayList<Product>();
         try{
             PreparedStatement statement = BaseRepository.getConnection().prepareStatement("select * from products where supplier=?");
             statement.setString(1, supplier);

@@ -73,11 +73,11 @@
 </head>
 <body>
 <div class="search-container">
-        <div>
+        <form action="/products" method="get">
             <input type="text" placeholder="Search.." name="supplier">
+            <input type="hidden" name="action" value="search">
             <button type="submit"><i class="fa fa-search"></i></button>
-            <button class="btn btn-info"onclick="window.location.href='/products?action=search&supplier=${supplier}'">Search</button>
-        </div>
+        </form>
 </div>
 <div class="container">
     <div>

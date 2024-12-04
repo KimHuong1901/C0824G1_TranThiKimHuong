@@ -16,7 +16,6 @@ import java.util.Objects;
 @WebServlet (name = "productController", value = "/products")
 public class ProductController extends HttpServlet {
     private static IProductService iproductService = new ProductService();
-//    Product product = new Product();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,14 +30,6 @@ public class ProductController extends HttpServlet {
                 break;
             case "update":
                 req.getRequestDispatcher("WEB-INF/update.jsp").forward(req, resp);
-                int id = Integer.parseInt( req.getParameter("id"));
-                String name = req.getParameter("name");
-                Integer price = Integer.parseInt(req.getParameter("price"));
-                String description = req.getParameter("description");
-                String supplier = req.getParameter("sup");
-                Product oldProduct = new Product(name, price, description, supplier);
-                req.setAttribute("oldProduct", oldProduct);
-                req.getRequestDispatcher("WEB-INF/update.jsp").forward(req, resp);
                 break;
             case "remove":
                 int oldId = Integer.parseInt(req.getParameter("id"));
@@ -50,13 +41,8 @@ public class ProductController extends HttpServlet {
                     req.setAttribute("products", sortProducts);
                     req.getRequestDispatcher("WEB-INF/list.jsp").forward(req, resp);
                     break;
-//            case "search":
-//                List<Product> findBySupplier = iproductService.findBySupplier(req.getParameter("supplier"));
-//                req.setAttribute("products", findBySupplier);
-//                req.getRequestDispatcher("WEB-INF/list.jsp").forward(req, resp);
-//                break;
             case "search":
-                String aaa = req.getParameter("supplier");
+//                String aaa = req.getParameter("supplier");
                 List<Product> findBySupplier = iproductService.findBySupplier(req.getParameter("supplier"));
                 req.setAttribute("products", findBySupplier);
                 req.getRequestDispatcher("WEB-INF/list.jsp").forward(req, resp);
@@ -90,23 +76,22 @@ public class ProductController extends HttpServlet {
                 Integer id = Integer.valueOf(req.getParameter("id"));
                 String name = req.getParameter("name");
                 Integer price = Integer.parseInt(req.getParameter("price"));
-                String description = req.getParameter("description");
+                String description = req.getParameter("desc");
                 String supplier = req.getParameter("sup");
                 Product product = new Product(name, price, description, supplier);
                 iproductService.update(id, product);
-                String result ="Update Successfully";
-                req.getRequestDispatcher("WEB-INF/view_update.jsp").forward(req, resp);
+                resp.sendRedirect("/products");
                 break;
             case "search":
                 List<Product> findBySupplier = iproductService.findBySupplier(req.getParameter("supplier"));
                 req.setAttribute("products", findBySupplier);
                 req.getRequestDispatcher("WEB-INF/list.jsp").forward(req, resp);
                 break;
-            default:
-                List<Product> products = iproductService.findAll();
-                req.setAttribute("products", products);
-                req.getRequestDispatcher("WEB-INF/list.jsp").forward(req, resp);
-                break;
+//            default:
+//                List<Product> products = iproductService.findAll();
+//                req.setAttribute("products", products);
+//                req.getRequestDispatcher("WEB-INF/list.jsp").forward(req, resp);
+//                break;
         }
 
     }
