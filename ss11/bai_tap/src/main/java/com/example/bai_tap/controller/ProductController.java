@@ -87,11 +87,6 @@ public class ProductController extends HttpServlet {
                 req.setAttribute("products", findBySupplier);
                 req.getRequestDispatcher("WEB-INF/list.jsp").forward(req, resp);
                 break;
-//            default:
-//                List<Product> products = iproductService.findAll();
-//                req.setAttribute("products", products);
-//                req.getRequestDispatcher("WEB-INF/list.jsp").forward(req, resp);
-//                break;
         }
 
     }
