@@ -1,7 +1,10 @@
 package com.example.final_module.repository;
 
+import com.example.final_module.model.Book;
+
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class BorrowBook {
@@ -34,6 +37,15 @@ public class BorrowBook {
             return false;
         }
 
+    }
+    public Book getId(String id){
+        try{
+            PreparedStatement statement = Database.getConnection().prepareStatement("select * from books where id = ?");
+            statement.setString(1,id);
+            ResultSet resultSet = statement.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
 

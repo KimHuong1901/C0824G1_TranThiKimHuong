@@ -52,14 +52,14 @@ public class BookController extends HttpServlet {
         int studentId = Integer.parseInt(req.getParameter("studentId"));
         Date borrowedDay = Date.valueOf(req.getParameter("borrowedDay")) ;
         Date paymentDay = Date.valueOf(req.getParameter("paymentDay"));
-//        Book books = borrowBook.generateId();
-//        if (books.getQuantity() > 0) {
-//            borrowBook.borrowBook(bookId, studentId, borrowedDay, paymentDay);
-//             books = borrowBook.updateBookQuantity(studentId, books.getQuantity() -1)
-////            resp.sendRedirect("books");
-//        } else {
-//            req.setAttribute("errorMessage", "Sách đã hết.");
-//            doGet(req, resp);
-//        }
+        Book books = borrowBook.getId(bookId);
+        if (books.getQuantity() > 0) {
+            borrowBook.borrowBook(bookId, studentId, borrowedDay, paymentDay);
+             books = borrowBook.updateBookQuantity(studentId, books.getQuantity() -1)
+//            resp.sendRedirect("books");
+        } else {
+            req.setAttribute("errorMessage", "Sách đã hết.");
+            doGet(req, resp);
+        }
     }
 }
